@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import setup.IPageObject;
 
 import java.lang.reflect.Field;
-import java.util.List;
 
 public class PageObject implements IPageObject {
 
@@ -35,5 +34,4 @@ public class PageObject implements IPageObject {
         return (WebElement) field.get(somePageObject);
 
     }
-
 }

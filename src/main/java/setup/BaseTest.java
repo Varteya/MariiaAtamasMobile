@@ -1,8 +1,6 @@
 package setup;
 
 import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 import pageObjects.PageObject;
@@ -10,13 +8,12 @@ import pageObjects.PageObject;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest implements IDriver {
 
     private static AppiumDriver appiumDriver; // singleton
-    private static IPageObject po;
+    IPageObject po;
 
     @Override
     public AppiumDriver getDriver() { return appiumDriver; }
@@ -43,8 +40,8 @@ public class BaseTest implements IDriver {
     private void setAppiumDriver(String platformName, String deviceName, String browserName, String app){
         DesiredCapabilities capabilities = new DesiredCapabilities();
         //mandatory Android capabilities
-        capabilities.setCapability("platformName", platformName);
-        capabilities.setCapability("deviceName", deviceName);
+        capabilities.setCapability("platformName",platformName);
+        capabilities.setCapability("deviceName",deviceName);
 
         if(app.endsWith(".apk")) capabilities.setCapability("app", (new File(app)).getAbsolutePath());
 
@@ -57,7 +54,6 @@ public class BaseTest implements IDriver {
             e.printStackTrace();
         }
 
-
         // Timeouts tuning
         appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -66,8 +62,6 @@ public class BaseTest implements IDriver {
     private void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {
         po = new PageObject(appType, appiumDriver);
     }
-
-
 
 
 }
