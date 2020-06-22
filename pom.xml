@@ -36,7 +36,7 @@
                         <suiteXmlFile>${suite.file}</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-                        <ts.appium>https://EPM-TSTF:${token}@mobilecloud.epam.com/wd/hub</ts.appium>
+                        <ts.appium>http://localhost:4723/wd/hub</ts.appium>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -72,15 +72,6 @@
             </properties>
         </profile>
 
-        <profile>
-            <id>cloudWeb</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>./src/test/resources/cloudAndroidWebTNG.xml</suite.file>
-            </properties>
-        </profile>
     </profiles>
 
 
