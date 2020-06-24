@@ -1,6 +1,6 @@
 package scenarios;
 
-import getData.GetProperties;
+import setup.GetProperties;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import setup.BaseTest;

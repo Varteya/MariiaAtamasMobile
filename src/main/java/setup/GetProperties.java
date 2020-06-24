@@ -1,4 +1,4 @@
-package getData;
+package setup;
 
 import java.io.IOException;
 import java.io.InputStream;
